@@ -1082,9 +1082,9 @@ COMMIT;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL, -- Muutsime 'username' -> 'email'
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `users` (`username`, `password`) VALUES ('admin', 'admin123');
+INSERT INTO `users` (`email`, `password`) VALUES ('admin@test.ee', 'admin123');
