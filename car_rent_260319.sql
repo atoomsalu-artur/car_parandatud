@@ -1071,24 +1071,29 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-CREATE TABLE IF NOT EXISTS `users` (
+DROP TABLE IF EXISTS `reservations`;
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` varchar(20) NOT NULL DEFAULT 'user', 
+  `role` varchar(20) NOT NULL DEFAULT 'user',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `reservations` (
+CREATE TABLE `reservations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `car_id` int(11) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `status` varchar(20) DEFAULT 'pending',
+  `status` varchar(50) DEFAULT 'ootel',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+ALTER TABLE `cars` MODIFY `status` varchar(50) NOT NULL DEFAULT 'vaba';
 
-INSERT INTO `users` (`email`, `password`, `role`) VALUES 
-('admin@test.com', 'admin123', 'admin');
+INSERT INTO `users` (`name`, `email`, `password`, `role`) VALUES 
+('Admin Kasutaja', 'admin@test.com', 'admin123', 'admin');
