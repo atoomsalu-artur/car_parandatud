@@ -1087,4 +1087,4 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `users` (`email`, `password`) VALUES ('admin@test.ee', 'admin123');
+INSERT INTO `users` (`email`, `password`) VALUES ('admin@test.com', 'admin123');
