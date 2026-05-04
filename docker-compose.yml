@@ -25,4 +25,5 @@ services:
       - ./car_rent_dump.sql:/docker-entrypoint-initdb.d/car_rent_dump.sql
 
 volumes:
-  db_data:
+      - db_data:/var/lib/mysql
+      - ./car_rent_260319.sql:/docker-entrypoint-initdb.d/init.sql
