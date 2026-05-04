@@ -1,5 +1,5 @@
 <?php
-$host = "db";
+$host = "car_db";
 $user = "caruser";
 $password = "carpass";
 $database = "car_rent";
