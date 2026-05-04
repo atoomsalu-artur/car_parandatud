@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Loomise aeg: Märts 19, 2026 kell 09:03 EL
--- Serveri versioon: 10.4.32-MariaDB
--- PHP versioon: 8.2.12
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -1082,9 +1073,12 @@ COMMIT;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) NOT NULL, -- Muutsime 'username' -> 'email'
+  `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `role` varchar(20) NOT NULL DEFAULT 'user', 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `users` (`email`, `password`) VALUES ('admin@test.com', 'admin123');
+
+INSERT INTO `users` (`email`, `password`, `role`) VALUES 
+('admin@test.com', 'admin123', 'admin');
